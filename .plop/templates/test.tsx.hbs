@@ -1,0 +1,13 @@
+import { render, screen } from '@testing-library/react'
+
+import { {{properCase name}} } from '.'
+
+describe('{{titleCase name}}', () => {
+  it('should render the base', () => {
+    const { container } = render(<{{properCase name}} />)
+
+    expect(screen.getByRole('heading', { name: /{{titleCase name}}/i })).toBeInTheDocument()
+
+    expect(container.firstChild).toMatchSnapshot()
+  })
+})

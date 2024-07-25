@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  app:
+    image: node:20.x
+    container_name: frontend
+    user: 'root'
+    restart: 'no'
+    working_dir: /app
+    network_mode: host
+    volumes:
+      - ./:/app
+    command: bash -c "npm install; npm run dev --host"
